@@ -1,483 +1,351 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Joshua Scarsbrook, Team Oceania Organizers" />
-    <title>Team Oceania 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joshua Scarsbrook, Team Oceania Organizers">
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-    />
+    >
 
-    <meta name="theme-color" content="#8060A7" />
+    <meta name="theme-color" content="#f8f3e9">
 
     <style>
       :root {
-        --primary-color: #8060a7;
-        --primary-dark: #45335c;
-        --primary-light: #a084c7;
-        --secondary-color: #645675;
-        --accent-color: #4d4158;
-        --accent-light: #6b5a6e;
-        --text-light: rgba(255, 255, 255, 0.95);
-        --text-muted: rgba(255, 255, 255, 0.75);
-        --text-subtle: rgba(255, 255, 255, 0.6);
-        --glass-bg: rgba(255, 255, 255, 0.12);
-        --glass-border: rgba(255, 255, 255, 0.25);
-        --glass-hover: rgba(255, 255, 255, 0.18);
-        --shadow-light: rgba(0, 0, 0, 0.1);
-        --shadow-medium: rgba(0, 0, 0, 0.15);
-        --shadow-heavy: rgba(0, 0, 0, 0.25);
+        --accent: #7b5aa7;
+        --light-accent: #b193da;
+        --light-fg: #ffffff;
+        --dark-fg: #000000;
+        --nav-link: #000000;
+        --page-bg: #f8f3e9;
+        --nav-bg: #fffcf8b2;
+        --nav-height: 4rem;
       }
 
       * {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
       }
 
-      body {
-        background: linear-gradient(
-            135deg,
-            var(--primary-color) 0%,
-            var(--secondary-color) 35%,
-            var(--accent-color) 70%,
-            var(--primary-dark) 100%
-          ),
-          radial-gradient(
-            circle at 20% 80%,
-            rgba(128, 96, 167, 0.3) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 20%,
-            rgba(100, 86, 117, 0.3) 0%,
-            transparent 50%
-          );
+      .icon {
+        height: 1.5rem;
+      }
+
+      html {
+        background-image: url(images/occ_background_tile.jpg);
+        background-repeat: repeat;
         background-attachment: fixed;
-        min-height: 100vh;
-        position: relative;
-        overflow-x: hidden;
+        background-size: 2%;
       }
 
-      .cover-container {
-        max-width: 75rem;
+      body {
         position: relative;
-        z-index: 1;
+        margin: auto;
+        max-width: 200ch;
+        background: var(--page-bg);
       }
 
-      /* Enhanced glass morphism header */
-      header {
-        backdrop-filter: blur(25px);
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        padding: 2rem;
-        margin-bottom: 4rem;
-        box-shadow: 0 12px 40px var(--shadow-light),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        position: relative;
-      }
-
-      header::before {
-        content: "";
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        font-weight: 600;
+        height: var(--nav-height);
+        background: var(--nav-bg);
+        padding: 0 1.5rem;
+        box-sizing: border-box;
+        
+        /* position over hero image */
         position: absolute;
         top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
+        width: 100%;
+        z-index: 1;
+
+        /* blurred background */
+        backdrop-filter: blur(20px);
       }
 
-      .brand-title {
-        font-weight: 800;
-        font-size: 1.75rem;
-        background: linear-gradient(135deg, #fff 0%, var(--text-light) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin: 0;
-        letter-spacing: -0.02em;
-      }
-
-      .nav-masthead {
-        gap: 0.75rem;
-      }
-
-      .nav-masthead .nav-link {
-        padding: 1rem 1.5rem;
-        font-weight: 500;
-        color: var(--text-muted);
-        background: transparent;
-        border-radius: 16px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      nav a {
         text-decoration: none;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid transparent;
+        color: var(--nav-link);
         display: flex;
         align-items: center;
         gap: 0.5rem;
       }
 
-      .nav-masthead .nav-link i {
-        font-size: 0.9rem;
-        transition: transform 0.3s ease;
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.8rem;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav .logo {
+        height: 3rem;
       }
 
-      .nav-masthead .nav-link::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.15),
-          transparent
-        );
-        transition: left 0.6s ease;
+      h1 {
+        font-weight: bold;
+        font-size: 4rem;
       }
 
-      .nav-masthead .nav-link:hover::before {
-        left: 100%;
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
       }
 
-      .nav-masthead .nav-link:hover,
-      .nav-masthead .nav-link:focus {
-        color: #fff;
-        background: var(--glass-hover);
-        border: 1px solid var(--glass-border);
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 8px 25px var(--shadow-medium);
-      }
-
-      .nav-masthead .nav-link:hover i {
-        transform: scale(1.1);
-      }
-
-      .nav-masthead .active {
-        color: #fff;
-        background: var(--glass-hover);
-        border: 1px solid var(--glass-border);
-        box-shadow: 0 6px 20px var(--shadow-light);
-      }
-
-      /* Enhanced main content */
       main {
         text-align: center;
-        margin: 5rem 0;
+      }
+
+      section {
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #hero-section {
         position: relative;
       }
 
-      .main-title {
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        font-weight: 800;
-        margin-bottom: 2rem;
-        background: linear-gradient(
-          135deg,
-          #fff 0%,
-          var(--text-light) 50%,
-          rgba(255, 255, 255, 0.8) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        position: relative;
-      }
-
-      .main-title::after {
-        content: "";
+      .underlay {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
-        background: linear-gradient(
-          90deg,
-          var(--primary-light),
-          var(--accent-light)
-        );
-        border-radius: 2px;
-        opacity: 0.6;
+        z-index: 0;
+        overflow: hidden;
       }
 
-      .subtitle {
-        font-size: 1.4rem;
-        color: var(--text-muted);
-        margin-bottom: 4rem;
-        font-weight: 400;
-        line-height: 1.6;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+      #hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
-      /* Enhanced button group */
-      .button-group {
+      #hero-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000030;
+      }
+      
+      #hero-section h1 {
+        margin-top: var(--nav-height);
+      }
+      
+      .overlay {
+        z-index: 1;
+      }
+
+      #hero-section .overlay {
+        padding: 4rem 0;
+        color: var(--light-fg);
+      }
+
+      .button-row {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .button {
+        background: var(--accent);
+        color: var(--light-fg);
+        padding: 0.75rem 2rem;
+        text-decoration: none;
+        font-size: 1.3rem;
+        border-radius: 0.5rem;
+      }
+
+      .card-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: auto;
+        flex-wrap: wrap;
+        max-width: 80ch;
+      }
+
+      .placing-card, .entity-card {
+        font-size: 1rem;
+        font-weight: 600;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
-        margin-bottom: 4rem;
       }
 
-      .cta-button {
-        background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
-        color: var(--primary-color);
-        border: none;
-        padding: 1.25rem 3rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border-radius: 60px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 1rem;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 12px 35px var(--shadow-light),
-          0 4px 15px rgba(128, 96, 167, 0.2);
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+      .placing-icon {
+        font-size: 3rem;
+        height: 4rem;
       }
 
-      .cta-button i {
-        font-size: 1.1rem;
-        transition: transform 0.3s ease;
+      .placing-icon img {
+        height: 4rem;
       }
 
-      .cta-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent
-        );
-        transition: left 0.6s ease;
+      #performance-section .card-grid {
+        align-items: end;
       }
 
-      .cta-button:hover::before {
-        left: 100%;
+      #sponsors-section {
+        background: var(--light-accent);
       }
 
-      .cta-button:hover {
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 0 20px 50px var(--shadow-medium),
-          0 8px 25px rgba(128, 96, 167, 0.3);
-        color: var(--primary-dark);
+      .entity-card {
+        gap: 0.6rem;
       }
 
-      .cta-button:hover i {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      /* Enhanced footer */
-      footer {
-        backdrop-filter: blur(25px);
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        padding: 2rem;
-        margin-top: 4rem;
-        box-shadow: 0 12px 40px var(--shadow-light),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        text-align: center;
-      }
-
-      .footer-text {
-        color: var(--text-muted);
-        margin: 0;
-        font-weight: 400;
-        font-size: 1.1rem;
-      }
-
-      .heart-icon {
-        color: #ef4444;
-        animation: heartbeat 2s ease-in-out infinite;
-        margin: 0 0.25rem;
-      }
-
-      @keyframes heartbeat {
-        0%,
-        50%,
-        100% {
-          transform: scale(1);
-        }
-        25%,
-        75% {
-          transform: scale(1.15);
-        }
-      }
-
-      /* Enhanced responsive design */
-      @media (max-width: 768px) {
-        .brand-title {
-          font-size: 1.4rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .nav-masthead {
-          flex-direction: column;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .nav-masthead .nav-link {
-          padding: 0.875rem 1.25rem;
-          width: 100%;
-          justify-content: center;
-        }
-
-        .subtitle {
-          font-size: 1.2rem;
-          margin-bottom: 3rem;
-        }
-
-        .cta-button {
-          padding: 1rem 2.5rem;
-          font-size: 1.1rem;
-          width: 100%;
-          max-width: 300px;
-        }
-
-        .info-cards {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-
-        header,
-        footer {
-          margin-left: 1rem;
-          margin-right: 1rem;
-          padding: 1.5rem;
-        }
-
-        main {
-          margin: 3rem 0;
-        }
-      }
-
-      /* Refined floating animation */
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-
-      main {
-        animation: float 8s ease-in-out infinite;
-      }
-
-      /* Scroll indicator */
-      .scroll-indicator {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        color: var(--text-subtle);
-        animation: bounce 2s infinite;
-      }
-
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateX(-50%) translateY(0);
-        }
-        40% {
-          transform: translateX(-50%) translateY(-10px);
-        }
-        60% {
-          transform: translateX(-50%) translateY(-5px);
-        }
+      .entity-card img {
+        width: 6rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 12px;
       }
     </style>
   </head>
-  <body class="d-flex h-100 text-white">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header>
-        <div class="d-flex flex-column flex-md-row align-items-center">
-          <h3 class="brand-title flex-grow-1 text-center text-md-start">
-            Team Oceania 2026
-          </h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" aria-current="page" href="#">
-              <i class="fas fa-home"></i>
-              <span>Home</span>
-            </a>
-            <a class="nav-link" href="https://discord.com/invite/yq5anhRAJP">
-              <i class="fab fa-discord"></i>
-              <span>Discord</span>
-            </a>
-            <a class="nav-link" href="mailto:j.scarsbrook@uq.edu.au">
-              <i class="fas fa-envelope"></i>
-              <span>Contact</span>
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <main class="flex-grow-1 d-flex flex-column justify-content-center">
-        <h1 class="main-title">Team Oceania 2026</h1>
-        <p class="subtitle">
-          Qualifiers for 2026 are on the 24th of January 2026. Registration and
-          more details below.
-        </p>
-
-        <div class="button-group">
-          <a href="https://ctfd.oceaniacc.com" class="cta-button" role="button">
-            <i class="fas fa-flag"></i>
-            <span>Qualifiers</span>
+  <body>
+    <nav>
+      <ul id="leading-nav">
+        <li>
+          <a href="/">
+            <img class="logo" src="icons/team_oceania.png">
+            Team Oceania
           </a>
+        </li>
+      </ul>
+      <ul id="trailing-nav">
+        <li>
+          <a href="https://discord.com/invite/yq5anhRAJP">
+            <img class="icon" src="icons/fontawesome/discord.svg">
+            Discord
+          </a>
+        </li>
+        <li>
+          <a href="mailto:j.scarsbrook@uq.edu.au">
+            <img class="icon" src="icons/fontawesome/envelope.svg" >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="hero-section">
+        <div class="underlay">
+          <img id="hero-image" src="images/banner.png">
+          <div id="hero-image-overlay"></div>
         </div>
-      </main>
 
-      <footer>
-        <p class="footer-text">
-          Made with<i class="fas fa-heart heart-icon"></i>in Brisbane,
-          Queensland, Australia
-        </p>
-      </footer>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+        <div class="overlay">
+          <h1>Team Oceania 2026</h1>
+          <div class="button-row">
+            <a class="button" href="https://ctfd.oceaniacc.com/">Qualifiers</a>
+            <!-- TODO(stackotter): Add sponsorship prospectus link -->
+            <a class="button" href="javascript:alert('todo')">Sponsorship prospectus</a>
+          </div>
+        </div>
+      </section>
+      
+      <section id="performance-section">
+        <h2>Our performance</h2>
+        <div class="card-grid">
+          <div class="placing-card">
+            <div class="placing-icon">4th</div>
+            <div class="placing-year">2022</div>
+            <div class="placing-location">Athens, Greece</div>
+          </div>
+          <div class="placing-card">
+            <div class="placing-icon"><img src="icons/medals/second_place.png"></div>
+            <div class="placing-year">2023</div>
+            <div class="placing-location">San Diego, USA</div>
+          </div>
+          <div class="placing-card">
+            <div class="placing-icon"><img src="icons/medals/third_place.png"></div>
+            <div class="placing-year">2024</div>
+            <div class="placing-location">Santiago, Chile</div>
+          </div>
+          <div class="placing-card">
+            <div class="placing-icon">4th</div>
+            <div class="placing-year">2025</div>
+            <div class="placing-location">Tokyo, Japan</div>
+          </div>
+          <div class="placing-card">
+            <div class="placing-icon">?</div>
+            <div class="placing-year">2026</div>
+            <div class="placing-location">Gold Coast, Australia</div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="sponsors-section">
+        <h2>Our sponsors</h2>
+        <div class="card-grid">
+          <div class="entity-card">
+            <img src="icons/sponsors/zellic.png">
+            <div class="entity-name">Zellic (bronze)</div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="players-section">
+        <h2>Our players</h2>
+        <div class="card-grid">
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/stackotter.png">
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp">
+            <div class="entity-name">toasterpwn</div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
