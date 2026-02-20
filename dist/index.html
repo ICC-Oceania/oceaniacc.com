@@ -1,234 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Joshua Scarsbrook, Team Oceania Organizers">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Joshua Scarsbrook, Team Oceania Organizers" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-    >
+    />
 
-    <meta name="theme-color" content="#f8f3e9">
+    <link rel="stylesheet" href="/style.css" />
 
-    <style>
-      :root {
-        --accent: #7b5aa7;
-        --light-accent: #b193da;
-        --light-fg: #ffffff;
-        --dark-fg: #000000;
-        --nav-link: #000000;
-        --page-bg: #f8f3e9;
-        --nav-bg: #fffcf8b2;
-        --nav-height: 4rem;
-      }
-
-      * {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-      }
-
-      .icon {
-        height: 1.5rem;
-      }
-
-      html {
-        background-image: url(images/occ_background_tile.jpg);
-        background-repeat: repeat;
-        background-attachment: fixed;
-        background-size: 2%;
-      }
-
-      body {
-        position: relative;
-        margin: auto;
-        max-width: 200ch;
-        background: var(--page-bg);
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1.2rem;
-        font-weight: 600;
-        height: var(--nav-height);
-        background: var(--nav-bg);
-        padding: 0 1.5rem;
-        box-sizing: border-box;
-        
-        /* position over hero image */
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-
-        /* blurred background */
-        backdrop-filter: blur(20px);
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--nav-link);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.8rem;
-        margin: 0;
-        padding: 0;
-      }
-      
-      nav .logo {
-        height: 3rem;
-      }
-
-      h1 {
-        font-weight: bold;
-        font-size: 4rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        margin-top: 0;
-      }
-
-      main {
-        text-align: center;
-      }
-
-      section {
-        padding: 3rem 0;
-        display: flex;
-        flex-direction: column;
-      }
-
-      #hero-section {
-        position: relative;
-      }
-
-      .underlay {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      #hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      #hero-image-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #00000030;
-      }
-      
-      #hero-section h1 {
-        margin-top: var(--nav-height);
-      }
-      
-      .overlay {
-        z-index: 1;
-      }
-
-      #hero-section .overlay {
-        padding: 4rem 0;
-        color: var(--light-fg);
-      }
-
-      .button-row {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .button {
-        background: var(--accent);
-        color: var(--light-fg);
-        padding: 0.75rem 2rem;
-        text-decoration: none;
-        font-size: 1.3rem;
-        border-radius: 0.5rem;
-      }
-
-      .card-grid {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: auto;
-        flex-wrap: wrap;
-        max-width: 80ch;
-      }
-
-      .placing-card, .entity-card {
-        font-size: 1rem;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .placing-icon {
-        font-size: 3rem;
-        height: 4rem;
-      }
-
-      .placing-icon img {
-        height: 4rem;
-      }
-
-      #performance-section .card-grid {
-        align-items: end;
-      }
-
-      #sponsors-section {
-        background: var(--light-accent);
-      }
-
-      .entity-card {
-        gap: 0.6rem;
-      }
-
-      .entity-card img {
-        width: 6rem;
-        box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 12px;
-      }
-    </style>
+    <meta name="theme-color" content="#f8f3e9" />
   </head>
   <body>
     <nav>
       <ul id="leading-nav">
         <li>
           <a href="/">
-            <img class="logo" src="icons/team_oceania.png">
+            <img class="logo" src="icons/team_oceania.png" />
             Team Oceania
           </a>
         </li>
       </ul>
       <ul id="trailing-nav">
         <li>
+          <a href="/about.html">
+            <img
+              class="icon"
+              src="icons/fontawesome/circle-info-solid-full.svg"
+            />
+            About
+          </a>
+        </li>
+        <li>
           <a href="https://discord.com/invite/yq5anhRAJP">
-            <img class="icon" src="icons/fontawesome/discord.svg">
+            <img class="icon" src="icons/fontawesome/discord.svg" />
             Discord
           </a>
         </li>
         <li>
           <a href="mailto:j.scarsbrook@uq.edu.au">
-            <img class="icon" src="icons/fontawesome/envelope.svg" >
+            <img class="icon" src="icons/fontawesome/envelope.svg" />
             Contact
           </a>
         </li>
@@ -238,20 +52,22 @@
     <main>
       <section id="hero-section">
         <div class="underlay">
-          <img id="hero-image" src="images/banner.png">
+          <img id="hero-image" src="images/banner.png" />
           <div id="hero-image-overlay"></div>
         </div>
 
         <div class="overlay">
-          <h1>Team Oceania 2026</h1>
+          <h1>ICC Team Oceania 2026</h1>
           <div class="button-row">
             <a class="button" href="https://ctfd.oceaniacc.com/">Qualifiers</a>
             <!-- TODO(stackotter): Add sponsorship prospectus link -->
-            <a class="button" href="javascript:alert('todo')">Sponsorship prospectus</a>
+            <a class="button" href="javascript:alert('todo')"
+              >Sponsorship prospectus</a
+            >
           </div>
         </div>
       </section>
-      
+
       <section id="performance-section">
         <h2>Our performance</h2>
         <div class="card-grid">
@@ -261,12 +77,16 @@
             <div class="placing-location">Athens, Greece</div>
           </div>
           <div class="placing-card">
-            <div class="placing-icon"><img src="icons/medals/second_place.png"></div>
+            <div class="placing-icon">
+              <img src="icons/medals/second_place.png" />
+            </div>
             <div class="placing-year">2023</div>
             <div class="placing-location">San Diego, USA</div>
           </div>
           <div class="placing-card">
-            <div class="placing-icon"><img src="icons/medals/third_place.png"></div>
+            <div class="placing-icon">
+              <img src="icons/medals/third_place.png" />
+            </div>
             <div class="placing-year">2024</div>
             <div class="placing-location">Santiago, Chile</div>
           </div>
@@ -282,67 +102,87 @@
           </div>
         </div>
       </section>
-      
-      <section id="sponsors-section">
-        <h2>Our sponsors</h2>
+
+      <section id="players-section">
+        <h2>The Team</h2>
         <div class="card-grid">
           <div class="entity-card">
-            <img src="icons/sponsors/zellic.png">
-            <div class="entity-name">Zellic (bronze)</div>
+            <img src="icons/players/stackotter.png" />
+            <div class="entity-name">stackotter</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/toasterpwn.webp" />
+            <div class="entity-name">toasterpwn</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/appender.png" />
+            <div class="entity-name">APpender</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Cale.webp" />
+            <div class="entity-name">Cale</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Evine.webp" />
+            <div class="entity-name">Evine</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Fromage.webp" />
+            <div class="entity-name">Fromage</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/hexf.webp" />
+            <div class="entity-name">HexF</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Jayden.webp" />
+            <div class="entity-name">Jayden</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/NullableVoid*.webp" />
+            <div class="entity-name">NullableVoid*</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/pew.webp" />
+            <div class="entity-name">TheGrandPew</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/pl4nty.webp" />
+            <div class="entity-name">pl4nty</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Sam.webp" />
+            <div class="entity-name">Sam</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/sara.webp" />
+            <div class="entity-name">Sara</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/sealldev.png" />
+            <div class="entity-name">sealldev</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/Sijing.webp" />
+            <div class="entity-name">Sijing</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/slidybat.webp" />
+            <div class="entity-name">SlidyBat</div>
+          </div>
+          <div class="entity-card">
+            <img src="icons/players/teddy.webp" />
+            <div class="entity-name">teddy</div>
           </div>
         </div>
       </section>
-      
-      <section id="players-section">
-        <h2>Our players</h2>
+
+      <section id="sponsors-section">
+        <h2>Sponsors</h2>
         <div class="card-grid">
           <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/stackotter.png">
-            <div class="entity-name">stackotter</div>
-          </div>
-          <div class="entity-card">
-            <img src="icons/players/toasterpwn.webp">
-            <div class="entity-name">toasterpwn</div>
+            <img src="icons/sponsors/zellic.png" />
+            <div class="entity-name">Zellic (bronze)</div>
           </div>
         </div>
       </section>
