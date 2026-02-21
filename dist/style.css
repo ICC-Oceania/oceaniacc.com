@@ -10,11 +10,7 @@
 }
 
 * {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .icon {
@@ -95,6 +91,12 @@ section {
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
+}
+
+section p {
+  max-width: 80ch;
+  text-align: left;
+  margin: auto;
 }
 
 #hero-section {
@@ -185,7 +187,8 @@ section {
   align-items: end;
 }
 
-#players-section {
+#performance-section,
+#sponsors-section {
   background: var(--light-accent);
 }
 
