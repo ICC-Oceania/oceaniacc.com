@@ -1,0 +1,282 @@
+:root {
+  --accent: #7b5aa7;
+  --light-accent: #b193da;
+  --light-fg: #ffffff;
+  --dark-fg: #000000;
+  --nav-link: #000000;
+  --page-bg: #f8f3e9;
+  --nav-bg: #fffcf8b2;
+  --nav-height: 4rem;
+}
+
+* {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.icon {
+  height: 1.5rem;
+}
+
+html {
+  background-image: url(images/occ_background_tile.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 2%;
+}
+
+body {
+  position: relative;
+  margin: auto;
+  max-width: 200ch;
+  background: var(--page-bg);
+}
+
+body section:nth-of-type(odd):not(:first-of-type) {
+  background: var(--light-accent);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+
+  /* position over hero image */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  /* blurred background */
+  backdrop-filter: blur(20px);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--nav-link);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav .logo {
+  height: 3rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+main {
+  text-align: center;
+}
+
+section {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+section p {
+  max-width: 80ch;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+#hero-section {
+  position: relative;
+}
+
+.underlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000030;
+}
+
+#hero-section h1 {
+  margin-top: var(--nav-height);
+}
+
+.overlay {
+  z-index: 1;
+}
+
+#hero-section .overlay {
+  padding: 4rem 0;
+  color: var(--light-fg);
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  background: var(--accent);
+  color: var(--light-fg);
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: auto;
+  flex-wrap: wrap;
+  max-width: 80ch;
+}
+
+.placing-card,
+.entity-card {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.placing-icon {
+  font-size: 3rem;
+  height: 4rem;
+}
+
+.placing-icon img {
+  height: 4rem;
+}
+
+#performance-section .card-grid {
+  align-items: end;
+}
+
+.entity-card {
+  gap: 0.6rem;
+}
+
+.entity-card img {
+  width: 6rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 12px;
+}
+
+.text-block {
+  font-size: 1.25rem;
+  margin: 5vh 20vh;
+}
+
+@media only screen and (max-width: 560px) {
+  .hidden-on-mobile {
+    display: none;
+  }
+
+  nav {
+    font-size: 1rem;
+    height: 3rem;
+    padding: 0 1rem;
+  }
+
+  nav .logo {
+    height: 2rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #hero-section .overlay {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  #hero-section .button-row {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
+
+  .placing-icon {
+    font-size: 2rem;
+    height: 3rem;
+  }
+
+  .placing-icon img {
+    height: 3rem;
+  }
+
+  .placing-card {
+    font-size: 0.6rem;
+  }
+
+  #performance-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #performance-section .card-grid {
+    gap: 0.8rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+
+  .entity-card {
+    font-size: 0.8rem;
+  }
+}
