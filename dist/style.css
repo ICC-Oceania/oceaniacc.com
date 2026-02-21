@@ -88,7 +88,7 @@ main {
 }
 
 section {
-  padding: 3rem 0;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -97,6 +97,11 @@ section p {
   max-width: 80ch;
   text-align: left;
   margin: auto;
+  margin-bottom: 1rem;
+}
+
+section p:last-child {
+  margin-bottom: 0;
 }
 
 #hero-section {
@@ -145,6 +150,7 @@ section p {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -204,4 +210,74 @@ section p {
 .text-block {
   font-size: 1.25rem;
   margin: 5vh 20vh;
+}
+
+@media only screen and (max-width: 560px) {
+  .hidden-on-mobile {
+    display: none;
+  }
+
+  nav {
+    font-size: 1rem;
+    height: 3rem;
+    padding: 0 1rem;
+  }
+
+  nav .logo {
+    height: 2rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #hero-section .overlay {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  #hero-section .button-row {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
+
+  .placing-icon {
+    font-size: 2rem;
+    height: 3rem;
+  }
+
+  .placing-icon img {
+    height: 3rem;
+  }
+
+  .placing-card {
+    font-size: 0.6rem;
+  }
+
+  #performance-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #performance-section .card-grid {
+    gap: 0.8rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+
+  .entity-card {
+    font-size: 0.8rem;
+  }
 }
