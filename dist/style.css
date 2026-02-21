@@ -31,6 +31,10 @@ body {
   background: var(--page-bg);
 }
 
+body section:nth-of-type(odd):not(:first-of-type) {
+  background: var(--light-accent);
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -191,11 +195,6 @@ section p:last-child {
 
 #performance-section .card-grid {
   align-items: end;
-}
-
-#performance-section,
-#players-section {
-  background: var(--light-accent);
 }
 
 .entity-card {
