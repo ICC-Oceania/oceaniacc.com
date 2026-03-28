@@ -10,7 +10,11 @@
 }
 
 * {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 .icon {
@@ -83,6 +87,12 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   margin-top: 0;
 }
@@ -206,9 +216,17 @@ section p:last-child {
   box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 12px;
 }
 
+.entity-card img.sponsor-logo {
+  box-shadow: none;
+}
+
 .text-block {
   font-size: 1.25rem;
   margin: 5vh 20vh;
+}
+
+.sponsor-gold {
+  color: #d3af37;
 }
 
 @media only screen and (max-width: 560px) {
