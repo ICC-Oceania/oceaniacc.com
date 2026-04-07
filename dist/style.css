@@ -216,6 +216,14 @@ section p:last-child {
   box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 12px;
 }
 
+.sponsor-title {
+  font-size: 1.8rem;
+}
+
+.sponsor-logo {
+  height: 5rem;
+}
+
 .entity-card img.sponsor-logo {
   box-shadow: none;
 }
@@ -227,6 +235,7 @@ section p:last-child {
 
 .sponsor-gold {
   color: #d3af37;
+  font-size: 1.7rem;
 }
 
 @media only screen and (max-width: 560px) {
