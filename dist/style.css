@@ -220,7 +220,7 @@ section p:last-child {
   font-size: 1.8rem;
 }
 
-.sponsor-logo {
+.sponsor-img {
   height: 5rem;
 }
 
@@ -235,6 +235,11 @@ section p:last-child {
 
 .sponsor-gold {
   color: #d3af37;
+  font-size: 1.7rem;
+}
+
+.sponsor-silver {
+  color: #c0c0c0;
   font-size: 1.7rem;
 }
 
